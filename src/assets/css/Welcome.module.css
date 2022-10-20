@@ -1,0 +1,52 @@
+.welcomeWrapper {
+  height: 100vh;
+  color: white;
+}
+.bgWrapper {
+  background-image: url("../bg/bg3.jpg");
+  height: 100%;
+  background-size: cover;
+}
+.welcomeLogo {
+  color: black;
+  padding: 40px;
+}
+.cards {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.cardAddHabit,
+.cardHabitList {
+  width: 50%;
+  padding: 40px;
+  margin: 5px;
+  transition: 0.7s ease;
+}
+
+.cardAddHabit:hover,
+.cardHabitList:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: white;
+}
+.link {
+  text-decoration: none;
+  transition: 0.7s ease;
+  color: black;
+}
+.link h2 {
+  margin-bottom: 10px;
+}
+.link:hover {
+  color: white;
+}
+
+.cardAddHabit span,
+.cardHabitList span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255, 0.9);
+  cursor: default;
+}
