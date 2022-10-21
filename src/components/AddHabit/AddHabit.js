@@ -19,11 +19,11 @@ function AddHabit({
       return;
     }
     let present = false;
-    habitState.map((habit) => {
+    habitState.filter((habit) => {
       if (habit.habitName === input) {
         present = true;
-        return;
       }
+      return;
     });
     if (present) {
       return alert("Already Present In List");

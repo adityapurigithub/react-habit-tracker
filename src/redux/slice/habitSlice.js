@@ -37,36 +37,36 @@ const habitSlice = createSlice({
         weekView: [
           {
             id: 0,
-            weekI: weekDayIndex + 3,
+            weekI: weekDayIndex - 4,
             day: week[weekDayIndex + 3],
-            dd: date - 6,
-            done: false,
-            notDone: false,
-            noAction: true,
-          },
-          {
-            id: 1,
-            weekI: weekDayIndex + 4,
-            day: week[weekDayIndex + 4],
-            dd: date - 5,
-            done: false,
-            notDone: false,
-            noAction: true,
-          },
-          {
-            id: 2,
-            weekI: weekDayIndex + 5,
-            day: week[weekDayIndex + 5],
             dd: date - 4,
             done: false,
             notDone: false,
             noAction: true,
           },
           {
-            id: 3,
-            weekI: weekDayIndex + 6,
-            day: week[weekDayIndex + 6],
+            id: 1,
+            weekI: weekDayIndex - 3,
+            day: week[weekDayIndex + 4],
             dd: date - 3,
+            done: false,
+            notDone: false,
+            noAction: true,
+          },
+          {
+            id: 2,
+            weekI: weekDayIndex - 2,
+            day: week[weekDayIndex + 5],
+            dd: date - 2,
+            done: false,
+            notDone: false,
+            noAction: true,
+          },
+          {
+            id: 3,
+            weekI: weekDayIndex - 1,
+            day: week[weekDayIndex + 6],
+            dd: date - 1,
             done: false,
             notDone: false,
             noAction: true,
@@ -119,7 +119,7 @@ const habitSlice = createSlice({
     },
     habitNoAction: (state, action) => {
       let habits = state.habits;
-      // console.log(action.payload);
+      console.log(action.payload);
       habits[action.payload.id].weekView[action.payload.i].noAction = false;
       habits[action.payload.id].weekView[action.payload.i].done = true;
       habits[action.payload.id].weekView[action.payload.i].notDone = false;

@@ -19,7 +19,7 @@ function HabitList({ habitState, handleDeleteHabit, handleStatusChange }) {
       <div className={styles.listContainer}>
         {habitState.length !== 0 ? (
           habitState.map((habit, index) => {
-            const weekI = habit.weekI;
+            let weekI = habit.weekI - 1;
             return (
               <>
                 <div className={styles.list}>
