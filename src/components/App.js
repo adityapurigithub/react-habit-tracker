@@ -87,6 +87,7 @@ function App() {
               <WeekView
                 habitState={habitState}
                 handleStatusChange={handleStatusChange}
+                handleDeleteHabit={handleDeleteHabit}
               />
             }
           />

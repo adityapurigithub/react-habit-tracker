@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../assets/css/HabitList.module.css";
-function WeekView({ habitState, handleStatusChange }) {
+function WeekView({ habitState, handleStatusChange, handleDeleteHabit }) {
   return (
     <div className={styles.listWrapper}>
       <div className={styles.head}>
@@ -101,6 +101,7 @@ function WeekView({ habitState, handleStatusChange }) {
                       src="https://cdn-icons-png.flaticon.com/128/3405/3405244.png"
                       id={index}
                       style={{ height: "25px", cursor: "pointer" }}
+                      onClick={handleDeleteHabit}
                     />
                   </div>
                 </div>
