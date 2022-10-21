@@ -1,6 +1,5 @@
 {
   "name": "habit-tacker",
-  "homepage": "https://adityapurigithub.github.io/Habit-Tracker-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
