@@ -42,7 +42,7 @@ function App() {
     const i = e.target.name;
     // console.log(id);
     // console.log(i);
-    if (i > d) {
+    if (i >= d) {
       //only previous days status can be modified
       return alert("Cant Change status of upcoming dates ");
     }
