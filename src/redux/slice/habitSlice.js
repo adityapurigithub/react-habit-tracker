@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const INITIAL_STATE = {
   habits: [],
 };
-//using create slice it automatically create action-creator..like addHabit and etc
 const habitSlice = createSlice({
   name: "habit",
   initialState: INITIAL_STATE,
   reducers: {
+    //using create slice it automatically create action-creator..like addHabit and etc
     addHabit: (state, action) => {
       const today = new Date();
       let date = today.getDate();

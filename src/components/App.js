@@ -15,21 +15,25 @@ import HabitList from "./HabitLists/HabitList";
 import WeekView from "./WeekView/WeekView";
 function App() {
   const [input, setInput] = useState("");
+
   const date = new Date();
   let d = date.getDay();
 
+  //using hook to access the state from store
   let habitState = useSelector((state) => state.habits);
   console.log(habitState);
 
   const dispatch = useDispatch();
 
+  //handler for input -value-change
   const handleChangeInput = (e) => {
     setInput(e.target.value);
   };
 
+  //handler for deleting a habit
   const handleDeleteHabit = (e) => {
     console.log(e.target.id);
-    dispatch(deleteHabit(e.target.id));
+    dispatch(deleteHabit(e.target.id)); //dispatching action provided by slice-actions
   };
   const handleStatusChange = (e) => {
     console.log(e);
@@ -39,6 +43,7 @@ function App() {
     // console.log(id);
     // console.log(i);
     if (i > d) {
+      //only previous days status can be modified
       return alert("Cant Change status of upcoming dates ");
     }
     if (status === "done") {
