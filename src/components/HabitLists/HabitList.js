@@ -19,7 +19,10 @@ function HabitList({ habitState, handleDeleteHabit, handleStatusChange }) {
       <div className={styles.listContainer}>
         {habitState.length !== 0 ? (
           habitState.map((habit, index) => {
-            let weekI = habit.weekI - 1;
+            let weekI = habit.weekI;
+            let weektoday = habit.weekView.findIndex(
+              (week) => week.weekI === weekI
+            );
             return (
               <>
                 <div className={styles.list}>
@@ -33,7 +36,7 @@ function HabitList({ habitState, handleDeleteHabit, handleStatusChange }) {
                     <ul class={styles.listItem}>{habit.habitName}</ul>
                   </div>
                   <div className={styles.status}>
-                    {habit.weekView[weekI].done ? (
+                    {habit.weekView[weektoday].done ? (
                       <abbr title="This habit is done">
                         <img
                           src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
@@ -48,7 +51,7 @@ function HabitList({ habitState, handleDeleteHabit, handleStatusChange }) {
                         />
                       </abbr>
                     ) : null}
-                    {habit.weekView[weekI].notDone ? (
+                    {habit.weekView[weektoday].notDone ? (
                       <abbr title="This habit is not done ">
                         <img
                           src="https://cdn-icons-png.flaticon.com/512/753/753345.png"
@@ -63,7 +66,7 @@ function HabitList({ habitState, handleDeleteHabit, handleStatusChange }) {
                         />
                       </abbr>
                     ) : null}
-                    {habit.weekView[weekI].noAction ? (
+                    {habit.weekView[weektoday].noAction ? (
                       <abbr title="You have not even started with this habit">
                         <img
                           src="https://cdn-icons-png.flaticon.com/128/2569/2569198.png"

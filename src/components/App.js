@@ -40,12 +40,13 @@ function App() {
     const status = e.target.alt;
     const id = e.target.id;
     const i = e.target.name;
-    // console.log(id);
-    // console.log(i);
-    if (i >= d) {
-      //only previous days status can be modified
-      return alert("Cant Change status of upcoming dates ");
-    }
+    console.log(id);
+    console.log(i);
+    console.log(d);
+    // if (i > d) {
+    //   //only previous days status can be modified
+    //   return alert("Cant Change status of upcoming dates ");
+    // }
     if (status === "done") {
       dispatch(habitDone({ id, i })); //sending id and i -params as a payload object
     } else if (status === "not-done") {

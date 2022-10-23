@@ -32,7 +32,7 @@ function WeekView({ habitState, handleStatusChange, handleDeleteHabit }) {
                     <ul class={styles.listItemWeek}>{habit.habitName}</ul>
                   </div>
                   {habit.weekView.map((week, i) => {
-                    // let weekI = week.weekI;
+                    let weekI = week.weekI;
                     return (
                       <div>
                         <div className={styles.calender}>
@@ -56,7 +56,7 @@ function WeekView({ habitState, handleStatusChange, handleDeleteHabit }) {
                                   cursor: "pointer",
                                 }}
                                 id={index}
-                                name={i}
+                                name={weekI}
                                 alt="done"
                                 onClick={handleStatusChange}
                               />
@@ -71,7 +71,7 @@ function WeekView({ habitState, handleStatusChange, handleDeleteHabit }) {
                                   cursor: "pointer",
                                 }}
                                 id={index}
-                                name={i}
+                                name={weekI}
                                 alt="not-done"
                                 onClick={handleStatusChange}
                               />
@@ -86,7 +86,7 @@ function WeekView({ habitState, handleStatusChange, handleDeleteHabit }) {
                                   cursor: "pointer",
                                 }}
                                 id={index}
-                                name={i}
+                                name={weekI}
                                 alt="no-action"
                                 onClick={handleStatusChange}
                               />

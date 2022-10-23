@@ -37,7 +37,7 @@ const habitSlice = createSlice({
         weekView: [
           {
             id: 0,
-            weekI: weekDayIndex - 4,
+            weekI: weekDayIndex + 3,
             day: week[weekDayIndex + 3],
             dd: date - 4,
             done: false,
@@ -46,7 +46,7 @@ const habitSlice = createSlice({
           },
           {
             id: 1,
-            weekI: weekDayIndex - 3,
+            weekI: weekDayIndex + 4,
             day: week[weekDayIndex + 4],
             dd: date - 3,
             done: false,
@@ -55,7 +55,7 @@ const habitSlice = createSlice({
           },
           {
             id: 2,
-            weekI: weekDayIndex - 2,
+            weekI: weekDayIndex + 5,
             day: week[weekDayIndex + 5],
             dd: date - 2,
             done: false,
@@ -64,7 +64,7 @@ const habitSlice = createSlice({
           },
           {
             id: 3,
-            weekI: weekDayIndex - 1,
+            weekI: weekDayIndex + 6,
             day: week[weekDayIndex + 6],
             dd: date - 1,
             done: false,
@@ -107,22 +107,43 @@ const habitSlice = createSlice({
     },
     habitDone: (state, action) => {
       let habits = state.habits;
-      habits[action.payload.id].weekView[action.payload.i].noAction = false;
-      habits[action.payload.id].weekView[action.payload.i].done = false;
-      habits[action.payload.id].weekView[action.payload.i].notDone = true;
+      let habit = habits[action.payload.id];
+      console.log(habits);
+      console.log(action.payload);
+      for (let index = 0; index < habit.weekView.length; index++) {
+        if (action.payload.i == habit.weekView[index].weekI) {
+          habit.weekView[index].noAction = false;
+          habit.weekView[index].done = false;
+          habit.weekView[index].notDone = true;
+        }
+      }
     },
     habitNotDone: (state, action) => {
       let habits = state.habits;
-      habits[action.payload.id].weekView[action.payload.i].noAction = true;
-      habits[action.payload.id].weekView[action.payload.i].done = false;
-      habits[action.payload.id].weekView[action.payload.i].notDone = false;
+      let habit = habits[action.payload.id];
+      console.log(habits);
+      console.log(action.payload);
+      for (let index = 0; index < habit.weekView.length; index++) {
+        if (action.payload.i == habit.weekView[index].weekI) {
+          habit.weekView[index].noAction = true;
+          habit.weekView[index].done = false;
+          habit.weekView[index].notDone = false;
+        }
+      }
     },
     habitNoAction: (state, action) => {
       let habits = state.habits;
+      let habit = habits[action.payload.id];
+      console.log(habits);
       console.log(action.payload);
-      habits[action.payload.id].weekView[action.payload.i].noAction = false;
-      habits[action.payload.id].weekView[action.payload.i].done = true;
-      habits[action.payload.id].weekView[action.payload.i].notDone = false;
+      for (let index = 0; index < habit.weekView.length; index++) {
+        console.log(habit.weekView[index].weekI);
+        if (habit.weekView[index].weekI == action.payload.i) {
+          habit.weekView[index].noAction = false;
+          habit.weekView[index].done = true;
+          habit.weekView[index].notDone = false;
+        }
+      }
     },
   },
 });
