@@ -23,6 +23,7 @@ function HabitList({ habitState, handleDeleteHabit, handleStatusChange }) {
             let weektoday = habit.weekView.findIndex(
               (week) => week.weekI === weekI
             );
+            console.log(weektoday);
             return (
               <>
                 <div className={styles.list}>
